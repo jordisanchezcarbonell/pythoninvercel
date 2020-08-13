@@ -10,4 +10,7 @@ class handler(BaseHTTPRequestHandler):
         self.end_headers()
         message = cow.Cowacter().milk('Hello from Python from a Serverless Function!')
         self.wfile.write(message.encode())
+        self.wfile.write(
+            str(datetime.now().strftime('%Y-%m-%d %H:%M:%S')).encode())
+
         return
