@@ -14,7 +14,7 @@ class handler(BaseHTTPRequestHandler):
         self.send_header('Content-type', 'text/plain')
         self.end_headers()
 
-        NUMBER += 1
+        NUMBER = 1+NUMBER
         message = cow.Cowacter().milk('Hello from Python from a Serverless Function! Now Time is it: ' +
                                       str(datetime.now().strftime('%Y-%m-%d %H:%M:%S'))+' ESTO FUNCIONA : '+str(NUMBER))
 
