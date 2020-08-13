@@ -4,18 +4,19 @@ from datetime import datetime
 from cowpy import cow
 
 
-NUMBER = 5
-
-
 class handler(BaseHTTPRequestHandler):
 
     def do_GET(self):
 
+        NUMBER = 5
+
         self.send_response(200)
         self.send_header('Content-type', 'text/plain')
         self.end_headers()
+
+        NUMBER += 1
         message = cow.Cowacter().milk('Hello from Python from a Serverless Function! Now Time is it: ' +
-                                      str(datetime.now().strftime('%Y-%m-%d %H:%M:%S'))+' ESTO FUNCIONA : '+str(NUMBER=NUMBER+1))
+                                      str(datetime.now().strftime('%Y-%m-%d %H:%M:%S'))+' ESTO FUNCIONA : '+str(NUMBER))
 
         self.wfile.write(
             bytes("<html><head><title>Title goes here.</title></head>/html>", "utf-8"))
