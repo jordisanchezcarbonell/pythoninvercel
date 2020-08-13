@@ -22,7 +22,7 @@ class handler(BaseHTTPRequestHandler):
         self.send_header('Content-type', 'text/plain')
         self.end_headers()
         message = cow.Cowacter().milk('Hello from Python from a Serverless Function! Now Time is it: ' +
-                                      str(datetime.now().strftime('%Y-%m-%d %H:%M:%S'))+str(cuenta))
+                                      str(datetime.now().strftime('%Y-%m-%d %H:%M:%S')))
         self.wfile.write(
             bytes("<html><head><title>Title goes here.</title></head>/html>", "utf-8"))
 
