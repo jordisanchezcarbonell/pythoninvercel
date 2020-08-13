@@ -17,7 +17,6 @@ class Contador(object):
 class handler(BaseHTTPRequestHandler):
 
     def do_GET(self):
-        cuenta = Contador()
 
         self.send_response(200)
         self.send_header('Content-type', 'text/plain')
@@ -28,5 +27,10 @@ class handler(BaseHTTPRequestHandler):
             bytes("<html><head><title>Title goes here.</title></head>/html>", "utf-8"))
 
         self.wfile.write(message.encode())
-        cuenta.siguiente()
+
+        cuenta = Contador()
+
+        for i in range(5):
+            self.wfile.write(str(cuenta.siguiente()))
+            cuenta.siguiente()
         return
