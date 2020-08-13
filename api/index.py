@@ -10,7 +10,6 @@ NUMBER = 5
 class handler(BaseHTTPRequestHandler):
 
     def do_GET(self):
-        cuenta = Contador()
 
         self.send_response(200)
         self.send_header('Content-type', 'text/plain')
