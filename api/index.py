@@ -23,6 +23,5 @@ class handler(BaseHTTPRequestHandler):
             self.wfile.write(
                 bytes("<html><head><title>Title goes here.</title></head>/html>", "utf-8"))
 
-            self.wfile.write(message.encode())
-
-            return
+        return self.wfile.write(message.encode())
+        
