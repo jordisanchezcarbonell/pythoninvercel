@@ -14,13 +14,15 @@ class handler(BaseHTTPRequestHandler):
         self.send_header('Content-type', 'text/plain')
         self.end_headers()
 
-        NUMBER = 1+NUMBER
-        message = cow.Cowacter().milk('Hello from Python from a Serverless Function! Now Time is it: ' +
-                                      str(datetime.now().strftime('%Y-%m-%d %H:%M:%S'))+' ESTO FUNCIONA : '+str(NUMBER))
+        NUMBER = 1 + NUMBER
+        for x in range(6):
 
-        self.wfile.write(
-            bytes("<html><head><title>Title goes here.</title></head>/html>", "utf-8"))
+            message = cow.Cowacter().milk('Hello from Python from a Serverless Function! Now Time is it: ' +
+                                          str(datetime.now().strftime('%Y-%m-%d %H:%M:%S'))+' ESTO FUNCIONA : '+str(x))
 
-        self.wfile.write(message.encode())
+            self.wfile.write(
+                bytes("<html><head><title>Title goes here.</title></head>/html>", "utf-8"))
 
-        return
+            self.wfile.write(message.encode())
+
+            return
