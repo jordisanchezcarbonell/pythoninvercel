@@ -15,7 +15,7 @@ class handler(BaseHTTPRequestHandler):
         self.end_headers()
 
         NUMBER = 1 + NUMBER
-        for x in range(6):
+        for x in range(60):
 
           # message = cow.Cowacter().milk('Hello from Python from a Serverless Function! Now Time is it: ' +
             # str(datetime.now().strftime('%Y-%m-%d %H:%M:%S'))+' ESTO FUNCIONA : '+str(x))
